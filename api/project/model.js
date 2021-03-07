@@ -7,7 +7,9 @@ async function find() {
 }
 
 async function insert(project) {
+  
   return await db("projects").insert(project);
+
 }
 
 module.exports = {

@@ -4,7 +4,7 @@ const db = require("../../data/dbConfig");
 
 async function find() {
   return await db("tasks as t")
-    .leftJoin("projects as p")
+    .leftJoin("projects as p", "p.project_id", "t.project_id")
     .select(
       "t.task_id",
       "t.task_description",
