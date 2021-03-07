@@ -16,6 +16,11 @@ async function find() {
     );
 }
 
+async function insert(task) {
+  return await db("tasks").insert(task);
+}
+
 module.exports = {
   find,
+  insert,
 };
