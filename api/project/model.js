@@ -7,9 +7,8 @@ async function find() {
 }
 
 async function insert(project) {
-  
-  return await db("projects").insert(project);
-
+  const [project_id] = await db("projects").insert(project);
+  return db("projects").where({ project_id }).first();
 }
 
 module.exports = {

@@ -17,7 +17,8 @@ async function find() {
 }
 
 async function insert(task) {
-  return await db("tasks").insert(task);
+  const [task_id] = await db("resources").insert(task);
+  return db("resources").where({ task_id }).first();
 }
 
 module.exports = {
