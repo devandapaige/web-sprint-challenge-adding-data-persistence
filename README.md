@@ -12,11 +12,11 @@ _Sprint challenges open at Midnight PST on Thursday and close at 5pm PST on Frid
 
 ## Project Set Up
 
-- [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
-- [ ] Open the assignment in Canvas and click on the "Set up git" option.
-- [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
-- [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
-- [ ] Check to see that Codegrade has accepted your git submission.
+- [✅] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
+- [✅] Open the assignment in Canvas and click on the "Set up git" option.
+- [✅] Follow instructions to set up Codegrade's Webhook and Deploy Key.
+- [✅] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
+- [✅] Check to see that Codegrade has accepted your git submission.
 
 For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.so/lambdaschool/Submitting-an-assignment-via-Code-Grade-A-Step-by-Step-Walkthrough-07bd65f5f8364e709ecb5064735ce374)
 
@@ -26,7 +26,7 @@ For a step-by-step on setting up Codegrade see [this guide.](https://www.notion.
 
 In this project you will be given a set of requirements and must design a database to satisfy them. As a part of this process you'll also build an API with endpoints to access the data.
 
-### Required Tables
+### Required Tables ✅
 
 Build the migration(s) in Knex inside the `data/migrations` folder using appropriate data types and constraints. **You must use the table names and the column names described below.** To give a primary key a name different than `id`, do `table.increments("project_id")` instead of `table.increments()`.
 
