@@ -1,6 +1,6 @@
 // build your `/api/tasks` router here
 const express = require("express");
-const Task = require("./router");
+const Task = require("./model");
 const router = express.Router();
 //MVP:
 //[POST] /api/tasks
@@ -14,7 +14,7 @@ router.get("/api/tasks", async (req, res, next) => {
 });
 router.post("/api/tasks", async (req, res, next) => {
   try {
-    res.status(201).json(await Task.insert());
+    res.status(201).json(await Task.insert(req.body));
   } catch (err) {
     next(err);
   }
