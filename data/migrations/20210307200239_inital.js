@@ -15,7 +15,11 @@ exports.up = async function (knex) {
     table.text("task_description").notNull();
     table.text("task_notes");
     table.boolean("task_completed").defaultsTo(0);
-    table.integer("project_id").references("project_id").inTable("projects");
+    table
+      .integer("project_id")
+      .references("project_id")
+      .inTable("projects")
+      .notNull();
   });
   await knex.schema.createTable("project_resources", (table) => {
     table.integer("project_id").references("project_id").inTable("projects");
@@ -26,8 +30,8 @@ exports.up = async function (knex) {
 };
 
 exports.down = async function (knex) {
-  await knex.schema.dropTableIfExits("project_resources");
-  await knex.schema.dropTableIfExits("tasks");
-  await knex.schema.dropTableIfExits("resources");
-  await knex.schema.dropTableIfExits("projects");
+  await knex.schema.dropTable("project_resources");
+  await knex.schema.dropTable("tasks");
+  await knex.schema.dropTable("resources");
+  await knex.schema.dropTable("projects");
 };

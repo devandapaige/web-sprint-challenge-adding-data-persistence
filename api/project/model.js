@@ -3,7 +3,13 @@
 const db = require("../../data/dbConfig");
 
 async function find() {
-  return await db("projects");
+  const allProjects = await db("projects");
+  return allProjects.map((results) => {
+    return {
+      ...results,
+      project_completed: results.project_completed == 1 ? true : false,
+    };
+  });
 }
 
 async function insert(project) {
