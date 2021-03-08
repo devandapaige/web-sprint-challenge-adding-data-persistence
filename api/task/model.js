@@ -23,8 +23,13 @@ async function find() {
 
 async function insert(task) {
   const [task_id] = await db("tasks").insert(task);
-
-  return db("tasks").where({ task_id }).first();
+  const newTask = db("tasks").where({ task_id }).first();
+  return newTask.map((results) => {
+    return {
+      ...results,
+      task_completed: results.task_completed == 1 ? true : false,
+    };
+  });
 }
 
 module.exports = {
